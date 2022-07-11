@@ -1,0 +1,58 @@
+h3, h5,
+p {
+  margin-left: 50px;
+}
+
+mat-paginator {
+  width: 400px;
+  margin-left: 350px;
+  background-color: rgb(194, 196, 193);
+}
+h2 {
+  color: rgb(88, 87, 87);
+}
+
+.btn {
+  width: 200px;
+}
+.btn:hover{
+  background-color: rgb(94, 89, 89);
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: 50px;
+  width: 80%;
+}
+th,
+td {
+  border: 2px solid rgb(245, 240, 240);
+  text-align: left;
+}
+
+th {
+  background-color: #edc2a0;
+}
+td {
+  height: 30px;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(73, 35, 35);
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+a {
+  margin-left: 20px;
+}
+
+.btn{
+  border-radius: 10px;
+}

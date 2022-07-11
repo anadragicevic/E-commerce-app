@@ -1,1 +1,54 @@
-<p>products works!</p>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="list-group list-group-horizontal sticky-top" style="margin-top: 20px;">
+            <a class="list-group-item" routerLink="/products">Sve kategorije</a>
+            <a
+              *ngFor="let c of categories$"
+              routerLink="/products"
+              [queryParams]="{ category: c.key }"
+              class="list-group-item list-group-horizontal-item-action"
+              [class.active]="category === c.key"
+            >
+              {{ c.payload.val().name }}
+            </a>
+            </div>
+        </div>
+      </div>
+      </div>
+     <br>
+     <br>
+    <div class="col">
+      <div class="row">
+        <ng-container *ngFor="let p of filteredProducts$; let i = index">
+          <div class="col-3">
+            <div class="card mb-4">
+              <div class="card-img-wrapper">
+                <img
+                  class="card-img-top"
+                  [src]="p.payload.val().imageUrl"
+                  alt="Card image cap"
+                />
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">{{ p.payload.val().title }}</h4>
+                <p class="card-text">
+                  Price: {{ p.payload.val().price | currency: 'USD' }}
+                </p>
+               
+                <button class="shadowBtn btn-primary" (click)="addToChart(p)">
+                  Add to Cart
+                </button>
+                <br>
+              
+              </div>
+            </div>
+          </div>
+          <div *ngIf="(i + 1) %4 === 0" class="w-100"></div>
+        </ng-container>
+      </div>
+    </div>
+ 
+  
+  

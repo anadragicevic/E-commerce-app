@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="row">
+      <div class="col-7" style="margin-left: 5%;">
+        <h3>Dodajte informacije o proizvodu</h3>
+        <br />
+        <form #f="ngForm" (ngSubmit)="save(f.value)">
+          <div class="form-group">
+            <label for="title">Naziv proizvoda</label>
+            <input
+              #title="ngModel"
+              [(ngModel)]="product.title"
+              name="title"
+              id="title"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div style="width: 70%;"
+              class="alert alert-warning"
+              *ngIf="title.touched && title.invalid"
+            >
+              Naziv prozivoda je obavezno polje.
+              <br />
+            </div>
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="price">Cena proizvoda</label>
+            <div class="input-group" style="width: 70%;">
+              <span class="input-group-text">$</span>
+              <input
+                
+                #price="ngModel"
+                [(ngModel)]="product.price"
+                name="price"
+                id="price"
+                type="number"
+                class="form-control"
+                required
+                min="0"
+                
+              />
+            </div>
+            <div style="width: 70%;"
+              class="alert alert-warning"
+              *ngIf="price.touched && price.invalid"
+            >
+              <div *ngIf="price.hasError('required')">
+                Cena proizvoda je obavezno polje.
+              </div>
+              <div *ngIf="price.hasError('min')">
+                Cena mora biti veća od 0$.
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="category">Kategorija proizvoda</label>
+            <select
+              #category="ngModel"
+              [(ngModel)]="product.category"
+              name="category"
+              id="category"
+              type="text"
+              class="form-control"
+              required
+              style="width: 70%;"
+            >
+              <option value=""></option>
+              <option *ngFor="let c of categories$" [value]="c.key">
+                {{ c.payload.val().name }}
+              </option>
+            </select>
+            <div style="width: 70%;"
+              class="alert alert-warning"
+              *ngIf="category.touched && category.invalid"
+            >
+              Kategorija proizvoda je obavezno polje.
+            </div>
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="imageUrl">URL slike proizvoda</label>
+            <input
+              #imageUrl="ngModel"
+              [(ngModel)]="product.imageUrl"
+              name="imageUrl"
+              id="imageUrl"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div style="width: 70%;"
+              class="alert alert-warning"
+              *ngIf="imageUrl.touched && imageUrl.invalid"
+            >
+              <div *ngIf="imageUrl.hasError('required')">
+                URL slike proizvoda je obavezno polje.
+              </div>
+            
+            </div>
+          </div>
+          <br />
+          <button class="btn btn-secondary me-2">Sačuvaj</button>
+          <button type="button" (click)="delete()" class="btn btn-primary">
+            Obriši
+          </button>
+        </form>
+      </div>
+      <div class="col-4">
+        <div class="card" style="margin-top: 70px;">
+          <img
+            class="card-img-top"
+            [src]="product.imageUrl"
+            *ngIf="product.imageUrl"
+          />
+          <div class="card-body">
+            <h4 class="card-title">{{ product.title }}</h4>
+            <p class="card-text">Cena : {{ product.price | currency: 'USD' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

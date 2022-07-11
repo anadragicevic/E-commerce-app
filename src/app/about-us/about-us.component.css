@@ -28,3 +28,7 @@ h3{
 }
 
 strong { font-weight: bold; }
+
+h3{
+    text-align: center;
+}

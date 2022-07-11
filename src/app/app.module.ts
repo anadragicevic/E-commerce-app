@@ -17,6 +17,9 @@ import { ProductsComponent } from './products/products.component';
 import { ManageProductsComponent } from './manage-products/manage-products.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { ProductFormComponent } from './product-form/product-form.component';
+import { SearchComponent } from './search/search.component';
+
 
 
 @NgModule({
@@ -30,6 +33,8 @@ import { FooterComponent } from './footer/footer.component';
     ProductsComponent,
     ManageProductsComponent,
     FooterComponent,
+    ProductFormComponent,
+    SearchComponent,
  
   ],
   imports: [
@@ -41,7 +46,8 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    BsDropdownModule
+    BsDropdownModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

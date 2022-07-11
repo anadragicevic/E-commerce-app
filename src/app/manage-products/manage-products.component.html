@@ -1,1 +1,41 @@
-<p>manage-products works!</p>
+
+<h3><strong>Lista proizvoda</strong></h3>
+<br />
+<h5>Kliknite na dugme pored da dodate novi proizvod<a routerLink="/manage-products/new" class="btn btn-primary">Dodaj</a></h5>
+
+<br />
+<div class="form-group text-center" style="margin: 0 800px 0 0;">
+  <p>
+   <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+ </p>
+</div>
+<br />
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th style="width: 200px;">Naziv</th>
+      <th class="text-center" style="width:150px">Cena</th>
+      <th style="width:150px"></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let p of products$">
+    <tr *ngIf="searchText=== '' || p.payload.val().title.toLowerCase().includes(searchText)">
+      <td > <img [src]="p.payload.val().imageUrl" class="thumbnail">&emsp;{{ p.payload.val().title }}</td>
+      <td class="text-center">{{ p.payload.val().price | currency: 'USD' }}</td>
+      <td class="text-center">
+        <a [routerLink]="['/manage-products/', p.key]">Izmeni</a>
+      </td>
+    
+    </tr>
+  </tbody>
+</table>
+<!-- <mat-paginator
+#paginator
+    [length]="this.products$?.length"
+    [pageSize]="15"
+    [pageSizeOptions]="[15, 30]"
+    (page)="OnPageChange($event)"
+>
+</mat-paginator> -->
+

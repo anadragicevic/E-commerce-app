@@ -1,0 +1,71 @@
+.card:hover img {
+    transform: scale(1.2, 1.2);
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    opacity: 0.7;
+    
+  }
+  .card img {
+    transform: scale(1, 1);
+
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    height: 300px;
+    
+   
+  }
+
+  .card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card{
+      border-bottom-right-radius: 30%;
+      border: 1px solid rgb(228, 167, 110);
+   
+  }
+
+  .list-group-item{
+      border: 1px solid rgb(120, 114, 112);
+      border-color: rgb(96, 91, 90);
+      background-color: black;
+      color: white;
+      
+  }
+
+  .list-group-item:hover{
+    text-decoration: underline;
+    
+  }
+
+  .shadowBtn{
+     width: 150px;
+     height: 30px;
+     border-radius: 10px;
+     background-color: transparent;
+     color: rgb(4, 64, 120);
+     cursor: pointer;
+     position: relative;
+  }
+
+  .shadowBtn:hover{
+    color: rgb(228, 152, 81);
+    transition: ease-in;
+  }
+  
+ .title {
+      background-color: rgb(228, 152, 81);
+  }
+
+  .sticky-top{
+    top:80px;
+  }
+
+  .swal-height {
+    height: 800px;
+  }
+
+  .container{
+    margin-left: 5%;
+  }
