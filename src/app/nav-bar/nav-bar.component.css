@@ -1,0 +1,73 @@
+img{
+    height: 60px;
+    width: 200px;
+    border: 2px solid #c39776;
+    border-radius: 15%;
+}
+
+.rounded-circle{
+  height: 45px;
+  width: 50px;
+  border: 2px solid #c39776;
+}
+
+.navbar-brand{
+  margin-left: 70%;
+}
+
+.fa-shopping-bag, .hovertext{
+  margin-left: 1200%;
+}
+
+.badge{
+  border-radius: 100px;
+  
+  
+}
+
+.btn{
+
+  width: 150px;
+  height: 38px;  
+  border: 2px solid #0b0b0b;
+
+}
+.btn:hover{
+  background-color: #c7c6c6;
+}
+
+.dropdown-menu{
+    margin-left: -80px;
+    margin-top: 10px; 
+    text-align:center;
+    border: 2px solid rgb(32, 31, 31);
+    border-radius: 10px;
+}  
+
+.hovertext {
+    position: relative;
+    size: 2px;
+  }
+.hovertext:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: 150px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(7, 6, 6);
+    text-align: center;
+    border-radius: 5px;
+    margin-left: -60px;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+  
+  }
+  
+  .hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  

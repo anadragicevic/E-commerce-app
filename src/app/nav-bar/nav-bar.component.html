@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/about-us">O nama
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-phone fa-lg" aria-hidden="true"></i> &nbsp;
+              <a href="tel:0644851058" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});">064/485-1058</a> 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand" href="#">
+              <img src="./assets/thisLogoo.png" alt=""></a>
+          </li>
+          <li *ngIf="auth.user$ | async as user" class="nav-item">
+            <a class="nav-link" href="#">
+     
+          
+                <i class="fa fa-shopping-bag " aria-hidden="true"><span
+                  class="badge bg-light bg-pill"  
+                >
+                  0
+                </span></i>
+              
+              </a>
+          </li>
+        </ul>
+        <div *ngIf="auth.user$ | async as user" class="dropdown" dropdown>
+            <a class="dropdown-toggle" dropdownToggle>
+              <img
+              class="rounded-circle me-2"
+              src="{{ user.photoURL }}"
+              alt="error"
+              referrerpolicy="no-referrer"
+            />
+            </a>
+            <div class="dropdown-menu" *dropdownMenu>
+              <a class="dropdown-item" routerLink="/my-orders">Moje porudžbine</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" routerLink="/admin/products">
+                Upravljanje proizvodima
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" routerLink="/" (click)="logout()">Odjavi se</a>
+            </div>
+        </div>
+    </div>
+    <button  *ngIf="!(auth.user$ | async)"
+    class="btn btn-secondary nav-link"
+    routerLink="/login"
+    routerLinkActive="active" 
+     
+  >
+    Prijavi se
+  </button>
+  

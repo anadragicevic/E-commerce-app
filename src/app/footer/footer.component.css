@@ -1,0 +1,16 @@
+img{
+    width: 90%;
+    height: 80%;
+}
+
+h3{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.block{
+    width: 50%;
+    height: 40%; 
+}
+
+strong { font-weight: bold; }
