@@ -13,24 +13,26 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
               <img src="./assets/thisLogoo.png" alt=""></a>
           </li>
           <li *ngIf="auth.user$ | async as user" class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" routerLink="/shopping-cart"
+            routerLinkActive="active" >
      
           
                 <i class="fa fa-shopping-bag " aria-hidden="true"><span
                   class="badge bg-light bg-pill"  
+                  *ngIf="cart$ | async as cart"
                 >
-                  0
+                {{ cart.totalItemsCount }}
                 </span></i>
               
               </a>
           </li>
           <li *ngIf="auth.user$ | async as user" class="nav-item">
             <a class="nav-link" routerLink="/products" style="margin-left: 220%;" routerLinkActive="active">
-              Products
+              Proizvodi 
               
               </a>
           </li>

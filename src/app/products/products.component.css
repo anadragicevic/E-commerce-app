@@ -28,8 +28,8 @@
 
   .list-group-item{
       border: 1px solid rgb(120, 114, 112);
-      border-color: rgb(96, 91, 90);
-      background-color: black;
+      border-color: rgb(252, 249, 249);
+      background-color: rgb(232, 186, 143);
       color: white;
       
   }

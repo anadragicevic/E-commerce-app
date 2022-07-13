@@ -22,7 +22,7 @@
   <tbody *ngFor="let p of products$">
     <tr *ngIf="searchText=== '' || p.payload.val().title.toLowerCase().includes(searchText)">
       <td > <img [src]="p.payload.val().imageUrl" class="thumbnail">&emsp;{{ p.payload.val().title }}</td>
-      <td class="text-center">{{ p.payload.val().price | currency: 'USD' }}</td>
+      <td class="text-center">{{ p.payload.val().price }} RSD</td>
       <td class="text-center">
         <a [routerLink]="['/manage-products/', p.key]">Izmeni</a>
       </td>

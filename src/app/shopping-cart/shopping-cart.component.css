@@ -1,0 +1,60 @@
+h3,
+h5 {
+  margin-left: 5%;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: 5%;
+  width: 85%;
+}
+th,
+td {
+  border: 2px solid rgb(245, 240, 240);
+  text-align: left;
+}
+
+th {
+  background-color: #edc2a0;
+}
+td {
+  height: 50px;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+tr:nth-child(even) {
+  background-color: #f6e6d9;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 1px solid #edc2a0;
+}
+
+.btn-sm{
+  margin-left: 25px;
+}
+
+.col-3{
+  border: 2px solid rgb(188, 185, 185);
+  
+}
+
+.btn{
+  border-radius: 10px;
+  border: 2px solid #edc2a0;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: #edc2a0;
+}
+
+img{
+  height: 70px;
+  width: 80px;
+}

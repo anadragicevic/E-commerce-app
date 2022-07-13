@@ -8,21 +8,15 @@ img{
 .rounded-circle{
   height: 45px;
   width: 50px;
-  border: 2px solid #c39776;
+  border: 1px solid #c39776;
 }
 
 .navbar-brand{
   margin-left: 70%;
 }
 
-.fa-shopping-bag, .hovertext{
-  margin-left: 1150%;
-}
-
 .badge{
-  border-radius: 100px;
-  
-  
+  border-radius: 10px;
 }
 
 .btn{
@@ -40,34 +34,15 @@ img{
     margin-left: -80px;
     margin-top: 10px; 
     text-align:center;
-    border: 2px solid rgb(32, 31, 31);
+    border: 1px solid rgb(32, 31, 31);
     border-radius: 10px;
 }  
 
-.hovertext {
-    position: relative;
-    size: 2px;
-  }
-.hovertext:before {
-    content: attr(data-hover);
-    visibility: hidden;
-    opacity: 0;
-    width: 150px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(7, 6, 6);
-    text-align: center;
-    border-radius: 5px;
-    margin-left: -60px;
-    transition: opacity 1s ease-in-out;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-  
-  }
-  
-  .hovertext:hover:before {
-    opacity: 1;
-    visibility: visible;
-  }
+.collapse{
+  margin-bottom: -1%;
+}
+
+
+
 
   

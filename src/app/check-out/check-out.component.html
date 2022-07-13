@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="row">
+      <div class="col-7">
+        <h2 style="margin-left: 7%;"><strong>Vaša korpa - kupovina</strong></h2>
+        <hr style="width: 70%; margin-left: 7%;" />
+        <br>
+        <h5 style="margin-left: 7%;">Popunite podatke</h5>
+        
+        <form #f="ngForm" style="margin-left: 7%;">
+          <div class="form-group" >
+            <input
+              #name="ngModel"
+              [(ngModel)]="shipping.name"
+              name="name"
+              id="name"
+              type="text"
+              class="form-control"
+              placeholder="Ime i prezime "
+              required
+              style="width: 70%;"
+            />
+            <div class="alert alert-warning" *ngIf="name.touched && name.invalid">
+              Ovo polje je obavezno.
+              <br />
+            </div>
+  
+            <br />
+            <div class="form-group">
+              <input
+                #telefon="ngModel"
+                [(ngModel)]="shipping.telefon"
+                name="telefon"
+                id="telefon"
+                type="text"
+                class="form-control"
+                placeholder="Kontakt telefon "
+                style="width: 70%;"
+                required
+              />
+              <div
+                class="alert alert-warning"
+                *ngIf="telefon.touched && telefon.invalid"
+              >
+                Ovo polje je obavezno.
+                <br />
+              </div>
+  
+              <br />
+            </div>
+            <br>
+     <h5>Adresa kupca</h5>
+     
+            <div class="form-group">
+              <input
+                #address="ngModel"
+                [(ngModel)]="shipping.address"
+                name="address"
+                id="address"
+                type="text"
+                class="form-control"
+                placeholder="Ulica i broj"
+                style="width: 70%;"
+                required
+              />
+              <div
+                class="alert alert-warning"
+                *ngIf="address.touched && address.invalid"
+              >
+                Ovo polje je obavezno.
+                <br />
+              </div>
+  
+              <br />
+            </div>
+            <div class="form-group">
+              <input
+                #city="ngModel"
+                [(ngModel)]="shipping.city"
+                name="city"
+                id="city"
+                type="text"
+                class="form-control"
+                placeholder="Grad"
+                style="width: 70%;"
+                required
+              />
+              <div
+                class="alert alert-warning"
+                *ngIf="city.touched && city.invalid"
+              >
+                Ovo polje je obavezno.
+                <br />
+              </div>
+            </div>
+            <div class="form-group">
+              <br />
+              <button
+                class="btn btn-secondary btn-sm"
+                (click)="placeOrder()"
+                [disabled]="!f.valid"
+                routerLink="/order-success"
+              >
+                Potvrdite kupovinu
+              </button>
+              <br />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-4" style="margin-top: 40px; margin-bottom: 10%;">
+        <br>
+        <h4 class="card-title"><strong>Porudžbina</strong></h4>
+        <p class="card-text">
+          Imate ukupno
+          <strong>{{ cart.totalItemsCount }}</strong>
+          proizvoda u Vašoj korpi.
+        </p>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let item of cart.items" class="list-group-item">
+            {{ item.quantity }} x {{ item.title }}
+            <div class="float-right">
+              {{ item.totalPrice}} RSD
+            </div>
+          </li>
+          <br />
+          <li class="list-group-item font-weight-bold">
+            Ukupno
+            <div class="float-right">
+              {{ cart.totalPrice }} RSD
+            </div>
+          </li>
+        </ul>
+      </div>
+     
+    </div>
+  </div>

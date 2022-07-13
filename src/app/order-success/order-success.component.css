@@ -1,0 +1,15 @@
+h1, h4{
+    text-align: center;
+}
+
+.btn{
+    border-radius: 10px;
+}
+
+.container {
+    background: -webkit-linear-gradient(right,   #f7dfcf , #e3deda );
+    border-radius: 30px;
+    margin-bottom: 1%;
+    padding: 6%;
+  }
+  

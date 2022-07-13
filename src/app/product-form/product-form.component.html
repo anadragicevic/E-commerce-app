@@ -27,7 +27,7 @@
           <div class="form-group">
             <label for="price">Cena proizvoda</label>
             <div class="input-group" style="width: 70%;">
-              <span class="input-group-text">$</span>
+              <span class="input-group-text">RSD</span>
               <input
                 
                 #price="ngModel"
@@ -49,7 +49,7 @@
                 Cena proizvoda je obavezno polje.
               </div>
               <div *ngIf="price.hasError('min')">
-                Cena mora biti veća od 0$.
+                Cena mora biti veća od 0 RSD.
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@
           />
           <div class="card-body">
             <h4 class="card-title">{{ product.title }}</h4>
-            <p class="card-text">Cena : {{ product.price | currency: 'USD' }}</p>
+            <p class="card-text">Cena : {{ product.price  }} RSD</p>
           </div>
         </div>
       </div>

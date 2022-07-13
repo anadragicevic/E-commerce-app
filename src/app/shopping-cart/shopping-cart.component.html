@@ -1,0 +1,94 @@
+<div class="container" *ngIf="cart$ | async as cart">
+    <div class="row">
+
+      <div class="col-9">
+        <br>
+        <h3>
+          <i class="fa fa-shopping-bag"></i>
+         Kopra
+        </h3>
+        <h5 *ngIf="!($any(cart).totalItemsCount>0)">Trenutno nema proizvoda u korpi.</h5>
+        <p *ngIf="!($any(cart).totalItemsCount>0)">Kliknite <a href="/products">ovde</a>
+        kako biste nastavili sa kupovinom.</p>
+        <h5 *ngIf="$any(cart).items.length">
+          Imate ukupno
+          <strong>{{ $any(cart).totalItemsCount }}</strong>
+          proizvoda u  Vašoj korpi.
+          <button
+            *ngIf="$any(cart).items.length"
+            class="btn btn-secondary btn-sm me-2"
+            (click)="clearCart()"
+            style="margin-left: 10%;"
+            
+          >
+            Isprazni korpu
+          </button>
+        </h5>
+  
+        <table class="table" *ngIf="$any(cart).totalItemsCount > 0">
+          <thead>
+            <tr>
+              <th style="width: 400px;">Naziv proizvoda</th>
+              <th class="text-center" style="width: 200px;">
+                Količina
+              </th>
+              <th class="text-center" style="width: 200px;">Cena</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of $any(cart).items">
+              <td>
+                <img [src]="item.imageUrl" class="thumbnail" />
+                &emsp; {{ item.title }}
+              </td>
+              <td class="text-center">
+               
+                <strong>{{ item.quantity }}</strong>
+              
+              </td>
+              <td class="text-center">
+                <strong>{{ item.totalPrice  }} RSD</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <div
+        class="col-3"
+        style="margin-top: 95px; margin-bottom: 20%;"
+        *ngIf="$any(cart).totalItemsCount > 0"
+      >
+        <p style="margin-top: 5px;">
+          Ukupno
+          <strong style="margin-left: 40%;">{{ $any(cart).totalPrice }} RSD</strong>
+          <br />
+          Porez
+         
+          <strong style="margin-left: 59%;">0 RSD</strong>
+          <br />
+          Dostava <strong style="margin-left: 51%;">0 RSD</strong>
+          
+        </p>
+        <img style="margin-left: 73%" src="https://www.jelenapantic.com/wp-content/uploads/2019/10/besplatna-isporuka.png" alt="">
+    <hr>
+        <h4 style="margin-top: 10px;">
+          <strong>
+            UKUPNO
+            <strong style="margin-left: 8%;">{{ $any(cart).totalPrice }} RSD </strong> 
+          </strong>
+        </h4>
+        <p style="margin-left: 10%">PDV je uključen u cenu</p>
+        <a
+          *ngIf="$any(cart).items.length"
+          class="btn btn-secondary btn-sm"
+          routerLink="/check-out"
+          style="margin-bottom: 10px;"
+          routerLink="/check-out"
+        >
+          Nastavite sa plaćanjem
+        </a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,3 +1,7 @@
+
+import { OrderSuccessComponent } from './order-success/order-success.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ManageProductsComponent } from './manage-products/manage-products.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { LoginComponent } from './login/login.component';
@@ -15,7 +19,12 @@ const routes: Routes = [
   { path: 'manage-products', component: ManageProductsComponent},
   { path: 'manage-products/new', component: ProductFormComponent},
   { path: 'manage-products/:id', component: ProductFormComponent},
-  { path: 'product-form', component: ProductFormComponent}
+  { path: 'product-form', component: ProductFormComponent},
+  { path: 'shopping-cart', component: ShoppingCartComponent},
+  { path: 'check-out', component: CheckOutComponent},
+  { path: 'order-success', component: OrderSuccessComponent},
+ 
+
 ];
 
 @NgModule({

@@ -1,6 +1,5 @@
 import  Swal  from 'sweetalert2';
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
 import { CategoryService } from '../services/category.service';
@@ -57,7 +56,7 @@ export class ProductFormComponent implements OnInit {
   delete() {
 
     Swal.fire({
-      title: 'Da li ste sigurni da želite da obrišete ovaj proizvod?',
+      text: 'Da li ste sigurni da želite da obrišete ovaj proizvod?',
       icon: 'warning',
       showDenyButton: true,
       confirmButtonText: 'Da',
@@ -68,7 +67,7 @@ export class ProductFormComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: 'Proizvod obrisan!',
+          text: 'Proizvod obrisan!',
           icon: 'success', showConfirmButton: false, width: '25%', timer: 2000,
           
         })
