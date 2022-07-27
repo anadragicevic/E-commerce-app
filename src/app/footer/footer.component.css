@@ -1,8 +1,11 @@
 img{
-    width: 100%;
-    height: 80%;
+    
+    width: 25%;
+    height: 15%;
 }
-
+.row{
+    justify-content: center;
+}
 h3{
     margin-top: 20px;
     margin-bottom: 30px;
@@ -14,3 +17,7 @@ h3{
 }
 
 strong { font-weight: bold; }
+
+p, h5{
+    text-align: center;
+}

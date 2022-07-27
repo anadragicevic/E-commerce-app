@@ -29,7 +29,7 @@
   .list-group-item{
       border: 1px solid rgb(120, 114, 112);
       border-color: rgb(252, 249, 249);
-      background-color: rgb(232, 186, 143);
+      background-color: rgb(220, 180, 140);
       color: white;
       
   }
@@ -43,14 +43,15 @@
      width: 150px;
      height: 30px;
      border-radius: 10px;
+     border-color: rgb(221, 164, 58);
      background-color: transparent;
-     color: rgb(4, 64, 120);
+     color: rgb(111, 98, 91);
      cursor: pointer;
      position: relative;
   }
 
   .shadowBtn:hover{
-    color: rgb(228, 152, 81);
+    color: rgb(3, 3, 2);
     transition: ease-in;
   }
   
@@ -68,4 +69,11 @@
 
   .container{
     margin-left: 5%;
+  }
+
+  i{
+    color: rgb(238, 186, 137);
+  }
+  i:hover{
+    color: rgb(228, 152, 81);
   }

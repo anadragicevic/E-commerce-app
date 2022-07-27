@@ -22,6 +22,7 @@ import { SearchComponent } from './search/search.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 
@@ -42,6 +43,7 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
     ShoppingCartComponent,
     CheckOutComponent,
     OrderSuccessComponent,
+    FavoritesComponent,
  
  
   ],

@@ -64,8 +64,19 @@ export class ProductsComponent implements OnInit, OnDestroy {
           width: '25%' ,
           timer: 2500
         })
-
   }
+
+  addToFavorites(product:Product){
+    this.shoppingCartService.addToFavorites(product);
+     Swal.fire({
+      text: 'Proizvod je dodat u omiljene.',
+      icon: 'success',
+      showConfirmButton: false,
+      width: '25%' ,
+      timer: 1500
+    })
+
+}
 
   
 

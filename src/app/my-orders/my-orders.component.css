@@ -1,0 +1,18 @@
+th,
+td {
+  border: 2px solid rgb(245, 240, 240);
+  text-align: left;
+}
+
+th {
+  background-color: rgb(194, 196, 193);
+}
+td {
+  height: 50px;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(235, 230, 230);
+}

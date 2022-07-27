@@ -26,6 +26,15 @@ export class ShoppingCartService {
 
   }
 
+  async addToFavorites(product: Product){
+    let cartId = await this.getOrCreateCartId();
+    let item$ = this.getItem(cartId, product.key);
+    item$.valueChanges()
+    .pipe(take(1))
+    .subscribe();
+
+  }
+
   async removeFromCart(product: any) {
     let cardId = await this.getOrCreateCartId();
     let items$ = this.getItem(cardId, product.key);

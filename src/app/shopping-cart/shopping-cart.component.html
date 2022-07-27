@@ -7,8 +7,9 @@
           <i class="fa fa-shopping-bag"></i>
          Kopra
         </h3>
+        <br>
         <h5 *ngIf="!($any(cart).totalItemsCount>0)">Trenutno nema proizvoda u korpi.</h5>
-        <p *ngIf="!($any(cart).totalItemsCount>0)">Kliknite <a href="/products">ovde</a>
+        <p *ngIf="!($any(cart).totalItemsCount>0)"> &nbsp; &nbsp;  &nbsp; &nbsp;  Kliknite <a href="/products">ovde</a>
         kako biste nastavili sa kupovinom.</p>
         <h5 *ngIf="$any(cart).items.length">
           Imate ukupno
