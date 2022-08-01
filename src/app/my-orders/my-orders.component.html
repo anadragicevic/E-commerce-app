@@ -1,23 +1,21 @@
+<br>
 <h1>Porudžbine</h1>
 <br>
 <table class="table">
   <thead>
     <tr>
-      <th>Customer Name</th>
-      <th>Address</th>
-      <th>Date</th>
-      <th></th>
+      <th>Ime i prezime poručioca</th>
+      <th>Adresa</th>
+      <th>Broj platne kartice</th>
+      <th>Datum porudžbine</th>
     </tr>
   </thead> 
   <tbody>
     <tr *ngFor="let order of orders$ | async">
       <td>{{order.payload.val().shipping.name}}</td>
       <td>{{ order.payload.val().shipping.address}}</td>
+      <td>{{ order.payload.val().shipping.brojKartice}}</td>
       <td>{{ order.payload.val().datePlaced | date}}</td>
-      <td>
-        <a [routerLink]="['/view-order']">View</a>
-   
-      </td>
     </tr>
   </tbody> 
 </table>

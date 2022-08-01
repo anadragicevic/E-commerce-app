@@ -1,14 +1,14 @@
 .container{
   
     padding-top: 30px;
-    padding-bottom: 40px;
+    
   }
 
   .container {
     background: -webkit-linear-gradient(right, #f7dfcf , #e3deda );
     border-radius: 30px;
     margin-top: 1%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     padding: 3%;
   }
   
@@ -17,9 +17,10 @@
   }
   
   .col-4{
-    border: 3px solid rgb(248, 247, 246);
+    border-top: 3px solid rgb(248, 247, 246);
     border-radius: 10px;
     padding-bottom: 10px;
+    
   }
   .alert{
     width: 60%;
@@ -31,11 +32,16 @@
 }
 
 .btn:hover{
-    background-color: rgb(238, 226, 211);
+    background-color: rgb(183, 177, 171);
 }
 
 input{
   width: 10%;
   border-radius: 10px;
   
+  }
+
+  img{
+    width: 400px;
+    height: 60px;
   }

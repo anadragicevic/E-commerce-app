@@ -1,3 +1,4 @@
+import { SupportComponent } from './support/support.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'check-out', component: CheckOutComponent},
   { path: 'order-success', component: OrderSuccessComponent},
   { path: 'my-orders', component: MyOrdersComponent},
-  { path: 'favorites', component: FavoritesComponent}
+  { path: 'favorites', component: FavoritesComponent},
+  { path: 'support', component: SupportComponent}
  
 
 ];

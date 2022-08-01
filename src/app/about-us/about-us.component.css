@@ -29,6 +29,7 @@ h3{
 
 strong { font-weight: bold; }
 
-h3{
+p, h3, h4{
+    color: #844616;
     text-align: center;
 }

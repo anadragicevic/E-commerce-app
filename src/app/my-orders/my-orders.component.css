@@ -5,7 +5,7 @@ td {
 }
 
 th {
-  background-color: rgb(194, 196, 193);
+  background-color: #edc2a0;
 }
 td {
   height: 50px;
@@ -14,5 +14,9 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: rgb(235, 230, 230);
+  background-color: #f6e6d9;
+}
+
+h1{
+  color: #844616;
 }

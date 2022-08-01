@@ -23,6 +23,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { SupportComponent } from './support/support.component';
 
 
 
@@ -44,6 +45,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     CheckOutComponent,
     OrderSuccessComponent,
     FavoritesComponent,
+    SupportComponent,
  
  
   ],

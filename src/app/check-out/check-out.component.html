@@ -4,7 +4,7 @@
         <h2 style="margin-left: 7%;"><strong>Vaša korpa - kupovina</strong></h2>
         <hr style="width: 70%; margin-left: 7%;" />
         <br>
-        <h5 style="margin-left: 7%;">Popunite podatke</h5>
+        <h5 style="margin-left: 7%;">Popunite lične podatke</h5>
         
         <form #f="ngForm" style="margin-left: 7%;">
           <div class="form-group" >
@@ -19,7 +19,7 @@
               required
               style="width: 70%;"
             />
-            <div class="alert alert-warning" *ngIf="name.touched && name.invalid">
+            <div class="alert alert-warning" style="width: 70%;" *ngIf="name.touched && name.invalid">
               Ovo polje je obavezno.
               <br />
             </div>
@@ -37,8 +37,8 @@
                 style="width: 70%;"
                 required
               />
-              <div
-                class="alert alert-warning"
+              <div 
+                class="alert alert-warning" style="width: 70%;"
                 *ngIf="telefon.touched && telefon.invalid"
               >
                 Ovo polje je obavezno.
@@ -63,7 +63,7 @@
                 required
               />
               <div
-                class="alert alert-warning"
+                class="alert alert-warning" style="width: 70%;"
                 *ngIf="address.touched && address.invalid"
               >
                 Ovo polje je obavezno.
@@ -85,15 +85,108 @@
                 required
               />
               <div
-                class="alert alert-warning"
+                class="alert alert-warning" style="width: 70%;"
                 *ngIf="city.touched && city.invalid"
               >
                 Ovo polje je obavezno.
                 <br />
               </div>
             </div>
+            <br>
+            <br>
+            <h5>Način plaćanja</h5>
+            <input type="radio" id="pouzecem" name="placanje" value="pouzecem" checked="true">
+            <label for="pouzecem">Plaćanje pouzećem</label>
+            <input type="radio" id="kartica" name="placanje" value="kartica" (click)="prikaziKartice()">
+            <label for="kartica">Plaćanje platnim karticama</label>
+            <br>
+            <br>
+                   <div class="form-group" *ngIf="kartice">
+                    <p>Unesite broj kartice</p>
+                     <input
+                       #brojKartice="ngModel"
+                       [(ngModel)]="shipping.brojKartice"
+                       name="brojKartice"
+                       id="brojKartice"
+                       type="text"
+                       class="form-control"
+                       placeholder="_ _ _ _   _ _ _ _   _ _ _ _   _ _ _ _"
+                       minlength="16"
+                       maxlength="19"
+                       style="width: 70%;" 
+                       required
+                     />
+                     <div
+                       class="alert alert-warning" style="width: 70%;"
+                       *ngIf="brojKartice.touched && brojKartice.invalid"
+                     >
+                       Ovo polje je obavezno i mora biti u adekvatnoj formi.
+                       <br />
+                     </div>
+         
+                     <br />
+                   </div>
+                   <div class="form-group" *ngIf="kartice">
+                    <p>Datum isteka kartice</p>
+                    
+                     <input
+                       #month="ngModel"
+                       [(ngModel)]="shipping.month"
+                       name="month"
+                       autocomplete="off" class="exp" id="month" maxlength="2" pattern="[0-9]*" inputmode="numerical" placeholder="MM" type="text" data-pattern-validate
+                       style="width: 15%;"
+                       required
+                     /> &nbsp;
+                     <input
+                       #year="ngModel"
+                       [(ngModel)]="shipping.year"
+                       name="year"
+                       autocomplete="off" class="exp" id="month" maxlength="2" pattern="[0-9]*" inputmode="numerical" placeholder="MM" type="text" data-pattern-validate
+                       style="width: 15%;"
+                       required
+                     />
+                     <div
+                       class="alert alert-warning" style="width: 70%;"
+                       *ngIf="month.touched && month.invalid || year.touched && year.invalid"
+                     >
+                       Ovo polje je obavezno.
+                       <br />
+                     </div>
+                   </div>
+                    <br>
+                   <div class="form-group" *ngIf="kartice">
+                    <p>Unesite tri cifre sa poledjine kartice</p>
+                    <input
+                      #sigurnosniBroj="ngModel"
+                      [(ngModel)]="shipping.sigurnosniBroj"
+                      name="sigurnosniBroj"
+                      id="sigurnosniBroj"
+                      type="text"
+                      class="form-control"
+                      placeholder="CVV"
+                      style="width:15%;"
+                      minlength="3"
+                      maxlength="3"
+                      inputmode="numerical"
+                      required
+                    />
+                    <div
+                      class="alert alert-warning" style="width: 40%;"
+                      *ngIf="sigurnosniBroj.touched && sigurnosniBroj.invalid"
+                    >
+                      Ovo polje je obavezno i mora sadržati 3 cifre.
+                      <br />
+                    </div>
+                    <br>
+                    <img src="https://www.kemoimpex.com/upload/images/zoom/vrste_plaanja_1.png" alt="">
+                    <br>
+                    <br>
+                  </div>
+      
+       
+       
+                 
             <div class="form-group">
-              <br />
               <button
                 class="btn btn-secondary btn-sm"
                 (click)="placeOrder()"
@@ -107,7 +200,7 @@
           </div>
         </form>
       </div>
-      <div class="col-4" style="margin-top: 40px; margin-bottom: 10%;">
+      <div class="col-4" style="margin-top: 40px; ">
         <br>
         <h4 class="card-title"><strong>Porudžbina</strong></h4>
         <p class="card-text">

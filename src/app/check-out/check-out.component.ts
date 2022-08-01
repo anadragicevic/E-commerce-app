@@ -14,11 +14,13 @@ import { OrderService } from '../services/order.service';
 })
 export class CheckOutComponent implements OnInit, OnDestroy {
 
-  shipping = { name: '', telefon:'', address: '', city: '' };
+  shipping = { name: '', telefon:'', address: '', city: '', brojKartice:'', month:'', year:'', sigurnosniBroj:'' };
   uderId: string;
   cart: ShoppingCart;
   cartSubscribtion: Subscription;
   userSubscribtion: Subscription;  
+  kartice=false;
+ 
 
   constructor(private router: Router,
               private authService: AuthService, 
@@ -37,6 +39,10 @@ export class CheckOutComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
    this.cartSubscribtion.unsubscribe();
    this.userSubscribtion.unsubscribe();
+  }
+
+  prikaziKartice(){
+     this.kartice=!this.kartice;
   }
 
  async placeOrder() {
@@ -59,5 +65,6 @@ export class CheckOutComponent implements OnInit, OnDestroy {
     let result= await this.orderService.storeOrder(order);
     this.router.navigate(['/order-success' , result.key]);
   }
+
 
 }
