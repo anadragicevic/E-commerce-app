@@ -1,2 +1,25 @@
 <br>
-<h1>Vaši omiljeni proizvodi</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-left:4%">
+<h3> <i class="fa fa-heart " aria-hidden="true"></i> Lista Vaših omiljenih proizvoda</h3>
+<br>
+<table class="table" >
+    <thead>
+      <tr>
+        <th class="text-center" style="width: 200px;">Naziv</th>
+        <th class="text-center" style="width:150px">Cena</th>
+        <th class="text-center"  style="width: 200px;">Kategorija proizvoda</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let f of favorites$">
+      <tr>
+        <td > <img [src]="f.payload.val().imageUrl" class="thumbnail">&emsp;{{ f.payload.val().title }}</td>
+        <td class="text-center">{{ f.payload.val().price }} RSD</td>
+        <td class="text-center">{{f.payload.val().category}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>

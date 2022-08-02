@@ -1,3 +1,35 @@
-h1{
-    text-align: center;
+h3{
+    margin-left: 5%;
 }
+
+table {
+    border-collapse: collapse;
+    margin-left: 50px;
+    width: 80%;
+  }
+  th,
+  td {
+    border: 2px solid rgb(245, 240, 240);
+    text-align: left;
+  }
+  
+  th {
+    background-color: #edc2a0;
+  }
+  td {
+    height: 30px;
+    vertical-align: middle;
+    line-height: normal;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgb(73, 35, 35);
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 1px solid #edc2a0;
+  }
+  

@@ -18,7 +18,7 @@ export class ShoppingCartService {
     const cartId = await this.getOrCreateCartId();
 
     return this.db.object('/shopping-carts/' + cartId).valueChanges()
-      .pipe(map((x: any) => new ShoppingCart(x.items)));
+      .pipe(map((x: any) => new ShoppingCart(x?.items)));
   }
 
   async addToCart(product: Product) {
@@ -26,14 +26,7 @@ export class ShoppingCartService {
 
   }
 
-  async addToFavorites(product: Product){
-    let cartId = await this.getOrCreateCartId();
-    let item$ = this.getItem(cartId, product.key);
-    item$.valueChanges()
-    .pipe(take(1))
-    .subscribe();
 
-  }
 
   async removeFromCart(product: any) {
     let cardId = await this.getOrCreateCartId();

@@ -1,3 +1,5 @@
+import { Subscription } from 'rxjs';
+import { ProductService } from './../services/product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favorites.component.css']
 })
 export class FavoritesComponent implements OnInit {
- 
-  constructor() { }
+  
+  favorites$;
+
+  constructor(private productService : ProductService) { 
+
+     this.productService.getFavorites().subscribe(favorites=>this.favorites$=favorites)
+  }
 
   ngOnInit(): void {
+ 
   }
 
 }

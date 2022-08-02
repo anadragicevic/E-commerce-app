@@ -1,6 +1,7 @@
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { Product } from '../models/product';
 
 
 @Injectable({
@@ -14,9 +15,23 @@ export class ProductService {
     return this.db.list('/products').push(product);
   }
 
-  // getAll(){
-  //   return this.db.list('/products').valueChanges();
-  // }
+  addToFavorites(product:any){
+    return this.db.list('/favorites').push(
+      { title: product.payload.val().title,
+        imageUrl: product.payload.val().imageUrl,
+        price: product.payload.val().price,
+        category: product.payload.val().category});
+   }
+
+    getFavorites(){
+    return this.db.list('/favorites').snapshotChanges()
+    .pipe(
+      map(object => {
+        console.log(object);
+        return object;
+      })
+    );
+   }
 
   getAll(){
     return this.db.list('/products').snapshotChanges()

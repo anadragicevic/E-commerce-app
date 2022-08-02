@@ -11,7 +11,7 @@
         <h5 *ngIf="!($any(cart).totalItemsCount>0)">Trenutno nema proizvoda u korpi.</h5>
         <p *ngIf="!($any(cart).totalItemsCount>0)"> &nbsp; &nbsp;  &nbsp; &nbsp;  Kliknite <a href="/products">ovde</a>
         kako biste nastavili sa kupovinom.</p>
-        <h5 *ngIf="$any(cart).items.length">
+        <h5 *ngIf="$any(cart).totalItemsCount>0" >
           Imate ukupno
           <strong>{{ $any(cart).totalItemsCount }}</strong>
           proizvoda u  Vašoj korpi.
@@ -29,7 +29,7 @@
         <table class="table" *ngIf="$any(cart).totalItemsCount > 0">
           <thead>
             <tr>
-              <th style="width: 400px;">Naziv proizvoda</th>
+              <th class="text-center" style="width: 400px;">Naziv proizvoda</th>
               <th class="text-center" style="width: 200px;">
                 Količina
               </th>

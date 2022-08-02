@@ -42,6 +42,8 @@ input{
   }
 
   img{
-    width: 400px;
+    width: 405px;
     height: 60px;
+    border-radius: 10px;
+    
   }
