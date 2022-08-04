@@ -72,11 +72,11 @@
             </div>
         </div>
     </div>
-    <button  *ngIf="!(auth.user$ | async)"
+    <button  *ngIf="!(auth.user$ | async) && !(route.url==='/login')"
     class="btn btn-secondary nav-link"
     routerLink="/login"
     routerLinkActive="active" 
-     
+    
   >
     Prijavi se
   </button>

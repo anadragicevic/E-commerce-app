@@ -42,6 +42,11 @@ export class ProductService {
       })
     );
   }
+  
+  async clearFavorites() {
+   
+    this.db.object('/favorites').remove();
+  }
 
   get(productId) : any{
     return this.db.object('/products/' + productId).valueChanges();

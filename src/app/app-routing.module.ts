@@ -1,3 +1,4 @@
+import { ViewOrderComponent } from './view-order/view-order.component';
 import { SupportComponent } from './support/support.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'order-success', component: OrderSuccessComponent},
   { path: 'my-orders', component: MyOrdersComponent},
   { path: 'favorites', component: FavoritesComponent},
-  { path: 'support', component: SupportComponent}
+  { path: 'support', component: SupportComponent},
+  { path: 'view-order/:id', component: ViewOrderComponent}
  
 
 ];

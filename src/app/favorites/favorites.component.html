@@ -1,25 +1,51 @@
-<br>
-<div class="container">
-    <div class="row">
-        <div class="col-12" style="margin-left:4%">
-<h3> <i class="fa fa-heart " aria-hidden="true"></i> Lista Vaših omiljenih proizvoda</h3>
-<br>
-<table class="table" >
-    <thead>
-      <tr>
-        <th class="text-center" style="width: 200px;">Naziv</th>
-        <th class="text-center" style="width:150px">Cena</th>
-        <th class="text-center"  style="width: 200px;">Kategorija proizvoda</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let f of favorites$">
-      <tr>
-        <td > <img [src]="f.payload.val().imageUrl" class="thumbnail">&emsp;{{ f.payload.val().title }}</td>
-        <td class="text-center">{{ f.payload.val().price }} RSD</td>
-        <td class="text-center">{{f.payload.val().category}}</td>
-      </tr>
-    </tbody>
-</table>
-</div>
-</div>
+<br />
+<h3 style="margin-left: 5%;">
+  <i class="fa fa-heart" aria-hidden="true"></i>
+  Pregled Vaših omiljenih proizvoda
+  <button
+    [hidden]="!favorites$.length"
+    class="btn btn-secondary btn-sm"
+    (click)="clearFavorites()"
+    style="margin-left: 2%;"
+  >
+    Isprazni korpu
+  </button>
+</h3>
+<br />
+<h5 style="margin-left: 5%;" *ngIf="!favorites$.length">
+  Lista omiljenih proizvoda je prazna.
+</h5>
+<p style="margin-left: 5%;" *ngIf="!favorites$.length">
+  Kliknite
+  <a href="/products">ovde</a>
+  kako biste nastavili sa kupovinom i odabirom omiljenih proizvoda.
+</p>
+
+
+<div class="col">
+  <div class="row">
+    <ng-container *ngFor="let f of favorites$; let i = index">
+      <div class="col-3">
+        <div class="card mb-4">
+          <div class="card-img-wrapper">
+            <img
+              class="card-img-top"
+              [src]="f.payload.val().imageUrl"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">{{ f.payload.val().title }}</h4>
+            <p class="card-text">Cena: {{ f.payload.val().price }} RSD</p>
+
+            <button class="shadowBtn btn-primary" (click)="addToChart(f)">
+              Dodaj u korpu
+            </button>
+            <br />
+          </div>
+        </div>
+      </div>
+      <div *ngIf="(i + 1) % 4 === 0" class="w-100"></div>
+    </ng-container>
+  </div>
 </div>

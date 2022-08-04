@@ -50,6 +50,7 @@ export class ShoppingCartComponent implements OnInit {
 
   }
 
+
   removeFromCart() {
     this.shoppingCartService.removeFromCart(this.product);
   }

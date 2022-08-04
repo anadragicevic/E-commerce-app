@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+<br>
+<h2>Detalji porudžbine</h2>
+<br>
+<div class="card" style="width: 55rem;">
+   
+    <div class="card-body">
+        <h4 class="card-text">Lista poručenih proizvoda</h4>
+        <hr>
+      <div *ngFor="let o of order.items">
+        <p class="card-text">
+            Naziv proizvoda : {{ o.product.title }} <img [src]="o.product.imageUrl" class="thumbnail">
+            <br>
+            Količina: {{ o.quantity }}
+            <br>
+            Cena: {{ o.product.price }} RSD
+            <br>
+        </p> 
+        <hr>
+      </div>
+      <br>
+
+      <h4 class="card-text">Podaci o poručiocu</h4>
+      <hr>
+      <p>
+          Ime i prezime: {{ order?.shipping?.name }}
+          <br>
+          Telefon: {{ order?.shipping?.telefon }}
+          <br>
+          Broj platne kartice: {{ order?.shipping?.brojKartice }}
+          <br>
+        </p>
+    </div>
+</div>
+</div>
+<div class="col-1"></div>
+</div>
+</div>
+
+  

@@ -4,18 +4,18 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Ime i prezime poručioca</th>
+      <th>Grad</th>
       <th>Adresa</th>
-      <th>Broj platne kartice</th>
       <th>Datum porudžbine</th>
+      <th></th>
     </tr>
   </thead> 
   <tbody>
     <tr *ngFor="let order of orders$ | async">
-      <td>{{order.payload.val().shipping.name}}</td>
+      <td>{{order.payload.val().shipping.city}}</td>
       <td>{{ order.payload.val().shipping.address}}</td>
-      <td>{{ order.payload.val().shipping.brojKartice}}</td>
       <td>{{ order.payload.val().datePlaced | date}}</td>
+      <td> <a [routerLink]="['/view-order', order.key]">Prikaži</a></td>
     </tr>
   </tbody> 
 </table>

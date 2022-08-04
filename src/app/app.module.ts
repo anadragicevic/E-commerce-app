@@ -24,6 +24,7 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { SupportComponent } from './support/support.component';
+import { ViewOrderComponent } from './view-order/view-order.component';
 
 
 
@@ -46,6 +47,7 @@ import { SupportComponent } from './support/support.component';
     OrderSuccessComponent,
     FavoritesComponent,
     SupportComponent,
+    ViewOrderComponent,
  
  
   ],

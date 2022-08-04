@@ -1,0 +1,15 @@
+
+.card{
+    border: 2px solid #edc2a0;
+}
+
+hr{
+    color: #edc2a0 ;
+    border: 1px solid;
+}
+img{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #edc2a0 ;
+    border-radius: 100%;
+}

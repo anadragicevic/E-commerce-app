@@ -14,7 +14,8 @@ export class NavBarComponent implements OnInit {
 
   cart$: Observable<ShoppingCart>;
  
-  constructor(public auth:AuthService, private shoppingCartService: ShoppingCartService, private route: Router) {
+ 
+  constructor(public auth:AuthService, private shoppingCartService: ShoppingCartService, public route: Router) {
       
    }
   async ngOnInit() {
