@@ -79,6 +79,16 @@
   cursor: pointer;
 }
 
+.btn-a{
+  border: none;
+  background-color: rgba(248, 246, 242, 0.735);
+  
+}
+
+.btn-a:hover{
+  color: rgb(133, 128, 128);
+}
+
 .btn:hover{
   background-color: #edc2a0;
 }

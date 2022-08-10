@@ -3,9 +3,17 @@
         <div class="col-1"></div>
         <div class="col-10">
 <br>
-<h2>Detalji porudžbine</h2>
+<h2>Detalji porudžbine &nbsp; <button *ngIf="order" type="button" (click)="delete()" class="btn btn-secondary btn-sm " >Otkaži porudžbinu</button></h2>
+<h5 *ngIf="!order">
+  Trenutno nemate nijednu porudžbinu.
+  </h5>
+  <p *ngIf="!order">
+    Kliknite
+    <a href="/products">ovde</a>
+    kako biste nastavili sa kupovinom.
+  </p>
 <br>
-<div class="card" style="width: 55rem;">
+<div *ngIf="order" class="card" style="width: 55rem;">
    
     <div class="card-body">
         <h4 class="card-text">Lista poručenih proizvoda</h4>
@@ -36,8 +44,10 @@
     </div>
 </div>
 </div>
+<br>
 <div class="col-1"></div>
 </div>
+
 </div>
 
   

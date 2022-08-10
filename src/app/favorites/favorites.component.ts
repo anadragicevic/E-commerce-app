@@ -34,6 +34,10 @@ export class FavoritesComponent implements OnInit {
     })
 }
 
+deleteFromFavorites(productId){
+  this.productService.delete(productId);
+}
+
 clearFavorites() {
 
   Swal.fire({

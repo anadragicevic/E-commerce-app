@@ -10,7 +10,7 @@ table {
 }
 th,
 td {
-  border: 2px solid rgb(245, 240, 240);
+ 
   text-align: left;
 }
 
@@ -39,7 +39,7 @@ tr:nth-child(even) {
 }
 
 .col-3{
-  border: 2px solid rgb(188, 185, 185);
+  border: 2px solid rgb(84, 83, 83);
   
 }
 
@@ -57,4 +57,13 @@ tr:nth-child(even) {
 img{
   height: 70px;
   width: 80px;
+}
+
+.btn-a{
+  border: none;
+  background-color: transparent;
+}
+
+.btn-a:hover{
+  color: rgb(133, 128, 128);
 }

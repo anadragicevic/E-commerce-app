@@ -1,3 +1,4 @@
+import { ProtectGuard } from './guard/protect.guard';
 import { ViewOrderComponent } from './view-order/view-order.component';
 import { SupportComponent } from './support/support.component';
 import { FavoritesComponent } from './favorites/favorites.component';
@@ -19,18 +20,27 @@ const routes: Routes = [
   { path: '', component: StartPageComponent},
   { path: 'about-us', component: AboutUsComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'products', component: ProductsComponent},
-  { path: 'manage-products', component: ManageProductsComponent},
-  { path: 'manage-products/new', component: ProductFormComponent},
-  { path: 'manage-products/:id', component: ProductFormComponent},
-  { path: 'product-form', component: ProductFormComponent},
-  { path: 'shopping-cart', component: ShoppingCartComponent},
-  { path: 'check-out', component: CheckOutComponent},
-  { path: 'order-success', component: OrderSuccessComponent},
-  { path: 'my-orders', component: MyOrdersComponent},
-  { path: 'favorites', component: FavoritesComponent},
-  { path: 'support', component: SupportComponent},
-  { path: 'view-order/:id', component: ViewOrderComponent}
+
+  {
+    path: '',
+    runGuardsAndResolvers: 'always',
+    canActivate: [ProtectGuard],
+    children: [
+      { path: 'products', component: ProductsComponent},
+      { path: 'manage-products', component: ManageProductsComponent},
+      { path: 'manage-products/new', component: ProductFormComponent},
+      { path: 'manage-products/:id', component: ProductFormComponent},
+      { path: 'product-form', component: ProductFormComponent},
+      { path: 'shopping-cart', component: ShoppingCartComponent},
+      { path: 'check-out', component: CheckOutComponent},
+      { path: 'order-success', component: OrderSuccessComponent},
+      { path: 'my-orders', component: MyOrdersComponent},
+      { path: 'favorites', component: FavoritesComponent},
+      { path: 'support', component: SupportComponent},
+      { path: 'view-order/:id', component: ViewOrderComponent}
+    ]
+  }
+ 
  
 
 ];

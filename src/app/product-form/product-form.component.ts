@@ -1,4 +1,4 @@
-import  Swal  from 'sweetalert2';
+import Swal from 'sweetalert2';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
@@ -47,7 +47,7 @@ export class ProductFormComponent implements OnInit {
       text: 'Uspešno ste dodali/izmenili proizvod.',
       icon: 'success',
       showConfirmButton: false,
-      width: '25%' ,
+      width: '25%',
       timer: 2500
     })
     this.router.navigate(['/manage-products']);
@@ -69,20 +69,15 @@ export class ProductFormComponent implements OnInit {
         Swal.fire({
           text: 'Proizvod obrisan!',
           icon: 'success', showConfirmButton: false, width: '25%', timer: 2000,
-          
+
         })
-        this.productService.delete(this.id),
+        this.productService.deleteProduct(this.id),
           this.router.navigate(['/manage-products'])
       } else if (result.isDenied) {
       }
     })
-
-
-   
   }
-
-
-
+  
   ngOnInit(): void {
   }
 

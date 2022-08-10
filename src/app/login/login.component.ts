@@ -5,6 +5,7 @@ import { getAuth, signInAnonymously, signInWithPopup } from 'firebase/auth';
 import { environment } from './../../environments/environment.prod';
 import { initializeApp } from 'firebase/app';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 
 
@@ -45,6 +46,7 @@ export class LoginComponent implements OnInit {
 
   login(){
      this.auth.login();
+    
   }
 }
 

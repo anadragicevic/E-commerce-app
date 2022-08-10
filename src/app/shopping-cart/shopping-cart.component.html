@@ -34,6 +34,7 @@
                 Količina
               </th>
               <th class="text-center" style="width: 200px;">Cena</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -50,6 +51,11 @@
               </td>
               <td class="text-center">
                 <strong>{{ item.totalPrice  }} RSD</strong>
+              </td>
+              <td>
+                <button class="btn-a" (click)="removeFromCart(item.key)">
+                  🗙 
+                </button>
               </td>
             </tr>
           </tbody>

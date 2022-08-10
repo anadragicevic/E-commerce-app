@@ -12,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class MyOrdersComponent {
 
-  orders$
+  orders$;
   
   constructor(
     private authService: AuthService,
@@ -20,6 +20,8 @@ export class MyOrdersComponent {
       
       this.orders$ = authService.user$
       .pipe(switchMap(u => orderService.getOrdersByUser(u.uid)));
+
+      
     }
     
     } 

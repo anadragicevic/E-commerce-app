@@ -3,12 +3,12 @@
   <i class="fa fa-heart" aria-hidden="true"></i>
   Pregled Vaših omiljenih proizvoda
   <button
-    [hidden]="!favorites$.length"
+    *ngIf="favorites$.length"
     class="btn btn-secondary btn-sm"
     (click)="clearFavorites()"
     style="margin-left: 2%;"
   >
-    Isprazni korpu
+    Ukloni sve omiljenje proizvode
   </button>
 </h3>
 <br />
@@ -26,8 +26,12 @@
   <div class="row">
     <ng-container *ngFor="let f of favorites$; let i = index">
       <div class="col-3">
-        <div class="card mb-4">
-          <div class="card-img-wrapper">
+        <div class="card mb-4" >
+          
+            <button class="btn-a" (click)="deleteFromFavorites(f.key)">
+              🗙 Ukloni
+            </button>
+            <div class="card-img-wrapper">
             <img
               class="card-img-top"
               [src]="f.payload.val().imageUrl"
@@ -41,6 +45,8 @@
             <button class="shadowBtn btn-primary" (click)="addToChart(f)">
               Dodaj u korpu
             </button>
+            
+
             <br />
           </div>
         </div>

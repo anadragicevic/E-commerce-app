@@ -51,8 +51,31 @@ export class ShoppingCartComponent implements OnInit {
   }
 
 
-  removeFromCart() {
-    this.shoppingCartService.removeFromCart(this.product);
+  removeFromCart(productId) {
+   
+    Swal.fire({
+      text: 'Da li ste sigurni da želite da izbrišete ovaj proizvod iz  Vaše korpe?',
+      icon: 'warning',
+      showDenyButton: true,
+      confirmButtonText: 'Da',
+      denyButtonText: `Odustani`,
+      confirmButtonColor: 'rgb(228, 152, 81)',
+      denyButtonColor: '#000000',
+      width: '30%'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          text: 'Proizvod obrisan.',
+          icon: 'success', showConfirmButton: false, width: '25%', timer: 2000
+        })
+        this.shoppingCartService.removeFromCart(productId);
+        
+      } else if (result.isDenied) {
+      }
+    })
+
+
+    
   }
 
 }

@@ -25,6 +25,8 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { SupportComponent } from './support/support.component';
 import { ViewOrderComponent } from './view-order/view-order.component';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 
@@ -48,6 +50,8 @@ import { ViewOrderComponent } from './view-order/view-order.component';
     FavoritesComponent,
     SupportComponent,
     ViewOrderComponent,
+    ProductQuantityComponent,
+    ProductCardComponent,
  
  
   ],

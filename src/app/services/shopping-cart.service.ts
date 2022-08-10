@@ -28,12 +28,9 @@ export class ShoppingCartService {
 
 
 
-  async removeFromCart(product: any) {
+  async removeFromCart(productId) {
     let cardId = await this.getOrCreateCartId();
-    let items$ = this.getItem(cardId, product.key);
-    items$.valueChanges().pipe(take(1)).subscribe(item => {
-      items$.update({ product: product, quantity: (item['quantity'] || 0) - 1 })
-    })
+    return this.db.object('/shopping-carts/'+cardId + '/items/' + productId).remove();
   }
 
   async clearCart() {

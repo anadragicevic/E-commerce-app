@@ -19,66 +19,67 @@ import { ShoppingCartService } from '../services/shopping-cart.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit, OnDestroy {
-
+  @Input('shopping-cart') shoppingCart: ShoppingCart;
   products$;
   categories$;
   category: string;
-  filteredProducts$=[];
-  product :Product;
+  filteredProducts$ = [];
+  product: Product;
   quantity;
   cart;
-  subscription:Subscription;
+  subscription: Subscription;
 
-  constructor(private route:ActivatedRoute, 
-              private productService: ProductService, 
-              private categoryService: CategoryService,
-              private shoppingCartService:ShoppingCartService,
-   ) {
+  constructor(private route: ActivatedRoute,
+    private productService: ProductService,
+    private categoryService: CategoryService,
+    private shoppingCartService: ShoppingCartService,
+  ) {
 
-    this.productService.getAll().pipe(switchMap(products=>{this.products$=products;
-      return route.queryParamMap})).subscribe(params=>{
-      this.category=params.get('category');
-      this.filteredProducts$=(this.category)? this.products$.filter(p=>p.payload.val().category===this.category)
-      : this.products$;
+    this.productService.getAll().pipe(switchMap(products => {
+      this.products$ = products;
+      return route.queryParamMap
+    })).subscribe(params => {
+      this.category = params.get('category');
+      this.filteredProducts$ = (this.category) ? this.products$.filter(p => p.payload.val().category === this.category)
+        : this.products$;
     });
-    this.categoryService.getCategories().subscribe(categories=>this.categories$=categories)
-    
-   }
+    this.categoryService.getCategories().subscribe(categories => this.categories$ = categories)
 
-
-  async ngOnInit(){
-    this.subscription =(await this.shoppingCartService.getCart()).subscribe(cart=>this.cart=cart);
-   
-     }
-
-     ngOnDestroy() {
-     this.subscription.unsubscribe();
-    }
-  
-  addToChart(product:Product){
-        this.shoppingCartService.addToCart(product);
-         Swal.fire({
-          text: 'Proizvod je dodat u korpu.',
-          icon: 'success',
-          showConfirmButton: false,
-          width: '25%' ,
-          timer: 2500
-        })
   }
 
-  addToFavorites(product:Product){
+
+  async ngOnInit() {
+    this.subscription = (await this.shoppingCartService.getCart()).subscribe(cart => this.cart = cart);
+
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  addToChart(product: Product) {
+    this.shoppingCartService.addToCart(product);
+    Swal.fire({
+      text: 'Proizvod je dodat u korpu.',
+      icon: 'success',
+      showConfirmButton: false,
+      width: '25%',
+      timer: 2500
+    })
+  }
+
+  addToFavorites(product: Product) {
     this.productService.addToFavorites(product);
-     Swal.fire({
+    Swal.fire({
       text: 'Proizvod je dodat u omiljene.',
       icon: 'success',
       showConfirmButton: false,
-      width: '25%' ,
+      width: '25%',
       timer: 1500
     })
 
-}
+  }
 
-  
+
 
 }
-  
