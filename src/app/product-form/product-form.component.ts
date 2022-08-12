@@ -17,7 +17,7 @@ import { ProductService } from '../services/product.service';
 export class ProductFormComponent implements OnInit {
 
   categories$;
-  product = { title: '', price: '', category: '', imageUrl: '' };
+  product = { title: '', price: '', category: '', imageUrl: '' , velicina: '', opis: ''};
   id;
 
 

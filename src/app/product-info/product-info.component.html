@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <br />
+    <h3 style="margin-left: 5%;">
+      <i class="fa fa-info-circle"></i>
+      Detalji o proizvodu
+    </h3>
+
+    <div class="col-1"> <i class="fa fa-arrow-left" routerLink="/products"></i></div>
+    <div class="col-5" style="margin-top: 20px;">
+      <img [src]="p.imageUrl" />
+    </div>
+
+    <div class="col-6" style="margin-top: 30px;">
+      <h3>{{ p.title }}</h3>
+      <h4>Dostupno</h4>
+      <div class="box">{{ p.velicina }}</div>
+      <div class="box">Cena : {{ p.price }} RSD</div>
+      <br>
+      <h5>{{ p.opis }}</h5>
+      <br>
+     <p> ✓ 100% prirodno  </p> 
+     <p> ✓ Premium kozmetika </p> 
+     <p> ✓ Nije testirano na životinjama </p>
+    </div>
+  </div>
+</div>

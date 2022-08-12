@@ -54,6 +54,66 @@
             </div>
           </div>
           <br />
+
+          <div class="form-group">
+            <label for="price">Veličina</label>
+            <div class="input-group" style="width: 70%;">
+              <input
+                
+                #velicina="ngModel"
+                [(ngModel)]="product.velicina"
+                name="velicina"
+                id="velicina"
+                type="text"
+                class="form-control"
+                required
+               
+                
+              />
+            </div>
+            <div style="width: 70%;"
+              class="alert alert-warning"
+              *ngIf="velicina.touched && velicina.invalid"
+            >
+              <div *ngIf="price.hasError('required')">
+                Obavezno polje.
+              </div>
+            
+            </div>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <label for="price">Opis proizvoda</label>
+            <div class="input-group" style="width: 70%;">
+              
+              <input
+                
+                #opis="ngModel"
+                [(ngModel)]="product.opis"
+                name="opis"
+                id="opis"
+                type="text"
+                class="form-control"
+                required
+               
+                
+              />
+            </div>
+            <div style="width: 70%;"
+              class="alert alert-warning"
+              *ngIf="opis.touched && opis.invalid"
+            >
+              <div *ngIf="price.hasError('required')">
+                Opis proizvoda je obavezno polje.
+              </div>
+          
+            </div>
+          </div>
+          <br />
+
+        
+
           <div class="form-group">
             <label for="category">Kategorija proizvoda</label>
             <select

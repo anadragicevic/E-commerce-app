@@ -25,10 +25,12 @@
           <div class="col-3">
             <div class="card mb-4">
               <div class="card-img-wrapper">
+                
                 <img
                   class="card-img-top"
                   [src]="p.payload.val().imageUrl"
                   alt="Card image cap"
+                  [routerLink]="['/product-info/', p.key]"
                 />
               </div>
               <div class="card-body">

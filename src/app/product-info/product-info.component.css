@@ -1,0 +1,14 @@
+img{
+    width: 400px;
+    height: 400px;
+}
+
+h4{
+    color: rgb(7, 165, 7);
+}
+i{
+    color: black;
+}
+i:hover{
+    color: rgb(91, 90, 90);
+}

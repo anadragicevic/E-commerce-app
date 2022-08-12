@@ -1,3 +1,4 @@
+import { ProductInfoComponent } from './product-info/product-info.component';
 import { ProtectGuard } from './guard/protect.guard';
 import { ViewOrderComponent } from './view-order/view-order.component';
 import { SupportComponent } from './support/support.component';
@@ -37,7 +38,8 @@ const routes: Routes = [
       { path: 'my-orders', component: MyOrdersComponent},
       { path: 'favorites', component: FavoritesComponent},
       { path: 'support', component: SupportComponent},
-      { path: 'view-order/:id', component: ViewOrderComponent}
+      { path: 'view-order/:id', component: ViewOrderComponent},
+      { path: 'product-info/:id', component: ProductInfoComponent}
     ]
   }
  
