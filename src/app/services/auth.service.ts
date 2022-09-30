@@ -24,7 +24,7 @@ export class AuthService {
     return this.afAuth.signInWithPopup(new GoogleAuthProvider).then(
       res => {
         Swal.fire({
-          title: 'Uspešna registracija/logovanje.',
+          title: 'Uspešna registracija/prijava.',
           text: 'Spremni ste za online kupovinu naših proizvoda.',
           icon: 'success',
           showConfirmButton: false,

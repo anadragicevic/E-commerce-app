@@ -31,8 +31,11 @@
       border-color: rgb(252, 249, 249);
       background-color: rgb(220, 180, 140);
       color: white;
+      justify-content: center;
       
   }
+
+ 
 
   .list-group-item:hover{
     text-decoration: underline;

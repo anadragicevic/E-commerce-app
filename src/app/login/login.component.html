@@ -1,57 +1,32 @@
 
 <div class="container">
-    <h1>Create an account  <img class="rounded-circle" src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" alt="Bootstrap" width="60" height="50 ">
+    <h1>Registracija<img class="rounded-circle" src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" alt="Bootstrap" width="60" height="50 ">
 </h1>
     <hr />
+    
     <div class="row">
-      <div class="col-6">
-        <form #loginForm="ngForm" (ngSubmit)="registerUser(loginForm.value)">
-          <h1 class="text-center">Sign Up</h1>
-  
-          <div class="form-group" style="padding: 0 100px;">
-            <hr />
-            <input
-              class="form-control me-2"
-              type="text"
-              ngModel
-              id="email"
-              name="email"
-              placeholder="E-mail"
-            />
-            <br />
-            <input
-              class="form-control me-2"
-              type="password"
-              ngModel
-              id="password"
-              name="password"
-              placeholder="Password"
-            />
-            <br />
-            <button
-              class="btn btn-secondary btn-block"
-              style="margin: 0 100px;"
-              type="submit"
-              routerLinkActive="active"
-            >
-              Sign in
-            </button>
-          </div>
-        </form>
-      </div>
-  
-      <div class="col-6">
-        <h1>Login with Google</h1>
+    
+      <div class="col">
+        <br>
+        <br>
+        <br>
+        <h3>Registruj se brzo i lako putem Google naloga </h3>
+    
         <br />
+        <br>
+   
         <button
           class="btn btn-secondary"
-          style="margin: 0 185px;"
+          
           (click)="login()"
           routerLinkActive="active"
         >
-          Google login
+          Google registracija
         </button>
+         <br>
+         <br>
+         <br>
       </div>
-    </div>
-  </div>
+
+
 

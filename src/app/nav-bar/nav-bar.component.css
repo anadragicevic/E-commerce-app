@@ -3,7 +3,10 @@ img{
     width: 200px;
     border: 2px solid #c39776;
     border-radius: 15%;
+    left: 50%;
 }
+
+
 
 .rounded-circle{
   height: 45px;
@@ -41,6 +44,7 @@ img{
 .collapse{
   margin-bottom: -1%;
 }
+
 
 
 
